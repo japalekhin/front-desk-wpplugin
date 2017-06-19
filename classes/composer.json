@@ -1,5 +1,7 @@
 {
     "require": {
-        "alekhin/website-helpers": "1.0.*"
+        "alekhin/website-helpers": "1.0.*",
+        "alekhin/wordpress-helpers": "1.0.*",
+        "symfony/class-loader": "3.3.2"
     }
 }

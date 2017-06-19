@@ -1,0 +1,19 @@
+{
+    "name": "alekhin/website-helpers",
+    "description": "Classes that make PHP programming a website easier.",
+    "license": "GPL-2.0",
+    "keywords": ["website", "website helpers"],
+    "authors": [
+        {
+            "name": "Japa Alekhin Llemos",
+            "email": "alekhin@llemos.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Alekhin\\WebsiteHelpers\\": "src"
+        }
+    }
+}
