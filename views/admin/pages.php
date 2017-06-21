@@ -1,8 +1,9 @@
 <?php
 
-use FrontEndUser\Admin\pages;
+use Alekhin\FrontEndUser\Admin\Pages;
 
-$wp_pages = pages::get_wordpress_pages();
+$system_pages = Pages::get_system_pages();
+$wp_pages = Pages::get_wordpress_pages();
 ?>
 <div class="wrap">
     <h2>Front-End User &mdash; Pages</h2>
@@ -11,61 +12,19 @@ $wp_pages = pages::get_wordpress_pages();
         <?php wp_nonce_field('front_end_user_pages', 'front_end_user_pages'); ?>
         <table class="form-table">
             <tbody>
-                <tr>
-                    <th scope="row">Login</th>
-                    <td>
-                        <select name="page_login" class="widefat">
-                            <option value="0">(no page selected)</option>
-                            <?php foreach ($wp_pages as $page): ?>
-                                <option value="<?php echo $page->ID; ?>"<?php echo $page->ID == pages::get_pages('login') ? ' selected="selected"' : ''; ?>><?php echo $page->post_title; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Register</th>
-                    <td>
-                        <select name="page_register" class="widefat">
-                            <option value="0">(no page selected)</option>
-                            <?php foreach ($wp_pages as $page): ?>
-                                <option value="<?php echo $page->ID; ?>"<?php echo $page->ID == pages::get_pages('register') ? ' selected="selected"' : ''; ?>><?php echo $page->post_title; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Password Recovery</th>
-                    <td>
-                        <select name="page_recover" class="widefat">
-                            <option value="0">(no page selected)</option>
-                            <?php foreach ($wp_pages as $page): ?>
-                                <option value="<?php echo $page->ID; ?>"<?php echo $page->ID == pages::get_pages('recover') ? ' selected="selected"' : ''; ?>><?php echo $page->post_title; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Reset Password</th>
-                    <td>
-                        <select name="page_reset" class="widefat">
-                            <option value="0">(no page selected)</option>
-                            <?php foreach ($wp_pages as $page): ?>
-                                <option value="<?php echo $page->ID; ?>"<?php echo $page->ID == pages::get_pages('reset') ? ' selected="selected"' : ''; ?>><?php echo $page->post_title; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </td>
-                </tr>
-                <!--tr>
-                    <th scope="row">2-Step Authentication</th>
-                    <td>
-                        <select name="page_verify" class="widefat">
-                            <option value="0">(no page selected)</option>
-                <?php foreach ($pages as $page): ?>
-            <option value="<?php echo $page->ID; ?>"<?php echo $page->ID == pages::get_pages('verify') ? ' selected="selected"' : ''; ?>><?php echo $page->post_title; ?></option>
+                <?php foreach ($system_pages as $sp_key => $sp_label): ?>
+                    <tr>
+                        <th scope="row"><?php echo $sp_label; ?></th>
+                        <td>
+                            <select name="page_<?php echo $sp_key; ?>" class="widefat">
+                                <option value="0">(no page selected)</option>
+                                <?php foreach ($wp_pages as $page): ?>
+                                    <option value="<?php echo $page->ID; ?>"<?php echo $page->ID == Pages::get_pages($sp_key) ? ' selected="selected"' : ''; ?>><?php echo $page->post_title; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
-                        </select>
-                    </td>
-                </tr-->
             </tbody>
         </table>
         <p class="submit">

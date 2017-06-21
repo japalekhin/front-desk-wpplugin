@@ -2,14 +2,14 @@
 
 namespace Alekhin\FrontEndUser;
 
-use Alekhin\FrontEndUser\Admin\menu as admenu;
-use Alekhin\FrontEndUser\Admin\pages;
-use Alekhin\FrontEndUser\Admin\settings;
+use Alekhin\FrontEndUser\Admin\Menu as AdMenu;
+use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontEndUser\Admin\Settings;
 
 class Menu {
 
     static function get_menu_item_login($parent_id = 0) {
-        if (($page_id = pages::get_pages('login')) === 0) {
+        if (($page_id = Pages::get_pages('login')) === 0) {
             return NULL;
         }
 
@@ -18,13 +18,13 @@ class Menu {
         $l->attr_title = $l->title;
         $l->menu_item_parent = $parent_id;
         $l->ID = '';
-        $l->url = pages::get_page_url('login');
+        $l->url = Pages::get_page_url('login');
         $l->db_id = $page_id;
         return $l;
     }
 
     static function get_menu_item_register($parent_id = 0) {
-        if (($page_id = pages::get_pages('register')) === 0) {
+        if (($page_id = Pages::get_pages('register')) === 0) {
             return NULL;
         }
 
@@ -33,13 +33,13 @@ class Menu {
         $l->attr_title = $l->title;
         $l->menu_item_parent = $parent_id;
         $l->ID = '';
-        $l->url = pages::get_page_url('register');
+        $l->url = Pages::get_page_url('register');
         $l->db_id = $page_id;
         return $l;
     }
 
     static function get_menu_item_recover($parent_id = 0) {
-        if (($page_id = pages::get_pages('recover')) === 0) {
+        if (($page_id = Pages::get_pages('recover')) === 0) {
             return NULL;
         }
 
@@ -48,7 +48,7 @@ class Menu {
         $l->attr_title = $l->title;
         $l->menu_item_parent = $parent_id;
         $l->ID = '';
-        $l->url = pages::get_page_url('recover');
+        $l->url = Pages::get_page_url('recover');
         $l->db_id = $page_id;
         return $l;
     }
@@ -76,7 +76,7 @@ class Menu {
     }
 
     static function filter_wp_nav_menu_objects($items, $nav_menu) {
-        $settings = admenu::get_settings();
+        $settings = AdMenu::get_settings();
 
         if (!in_array($settings->menu_type, ['location', 'menu',])) {
             return $items;
@@ -111,7 +111,7 @@ class Menu {
                     $items[] = $recover_item;
                 }
             }
-            if (!is_null($register_item = self::get_menu_item_register()) && settings::users_can_register()) {
+            if (!is_null($register_item = self::get_menu_item_register()) && Settings::users_can_register()) {
                 $items[] = $register_item;
             }
         }
@@ -120,7 +120,7 @@ class Menu {
     }
 
     static function initialize() {
-        if (admenu::get_settings()->enabled) {
+        if (AdMenu::get_settings()->enabled) {
             add_filter('wp_nav_menu_objects', [__CLASS__, 'filter_wp_nav_menu_objects',], 10, 2);
         }
     }

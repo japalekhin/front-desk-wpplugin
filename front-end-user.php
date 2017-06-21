@@ -41,21 +41,23 @@ define(__NAMESPACE__ . '\url', plugin_dir_url(__FILE__));
 require_once dir . 'classes/vendor/autoload.php';
 
 $symfony_loader = new \Symfony\Component\ClassLoader\Psr4ClassLoader();
-$symfony_loader->addPrefix('Alekhin\\', dir . 'classes/Alekhin');
+$symfony_loader->addPrefix('Alekhin\FrontEndUser\\', dir . str_replace('/', DIRECTORY_SEPARATOR, 'classes/Alekhin/FrontEndUser'));
 $symfony_loader->register();
 
-\Alekhin\FrontEndUser\Admin\Admin::initialize();
-\Alekhin\FrontEndUser\Admin\Theme::initialize();
-\Alekhin\FrontEndUser\Admin\Pages::initialize();
-\Alekhin\FrontEndUser\Admin\Menu::initialize();
-\Alekhin\FrontEndUser\Admin\Settings::initialize();
+FrontEndUser::initialize();
 
-\Alekhin\FrontEndUser\Menu::initialize();
-\Alekhin\FrontEndUser\Login::initialize();
-\Alekhin\FrontEndUser\Register::initialize();
-\Alekhin\FrontEndUser\Reset::initialize();
-\Alekhin\FrontEndUser\Recover::initialize();
-//\Alekhin\FrontEndUser\TwoStep::initialize();
+Admin\Admin::initialize();
+Admin\Theme::initialize();
+Admin\Pages::initialize();
+Admin\Menu::initialize();
+Admin\Settings::initialize();
+
+Menu::initialize();
+Login::initialize();
+Register::initialize();
+Reset::initialize();
+Recover::initialize();
+//TwoStep::initialize();
 
 $loader = new \Alekhin\WebsiteHelpers\ReturnObject();
 

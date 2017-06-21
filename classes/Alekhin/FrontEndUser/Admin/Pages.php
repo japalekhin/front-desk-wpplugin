@@ -2,7 +2,8 @@
 
 namespace Alekhin\FrontEndUser\Admin;
 
-use Alekhin\Helpers\return_object;
+use \Alekhin\WebsiteHelpers\ReturnObject;
+use \Alekhin\FrontEndUser\FrontEndUser;
 
 class Pages {
 
@@ -20,8 +21,19 @@ class Pages {
         return get_posts((array) $attr);
     }
 
+    static function get_system_pages() {
+        $pages = [];
+
+        $pages['login'] = 'Login';
+        $pages['register'] = 'Register';
+        $pages['recover'] = 'Password Recovery';
+        $pages['reset'] = 'Reset Password';
+
+        return $pages;
+    }
+
     static function save_pages() {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->pages = [];
         $r->data->pages['login'] = intval(trim(filter_input(INPUT_POST, 'page_login')));
         $r->data->pages['register'] = intval(trim(filter_input(INPUT_POST, 'page_register')));
@@ -102,7 +114,7 @@ class Pages {
     }
 
     static function view_admin() {
-        include \FrontEndUser\dir . '/views/admin/pages.php';
+        include FrontEndUser::get_dir('/views/admin/pages.php');
     }
 
     static function initialize() {

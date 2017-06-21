@@ -2,7 +2,8 @@
 
 namespace Alekhin\FrontEndUser\Admin;
 
-use Alekhin\Helpers\return_object;
+use Alekhin\WebsiteHelpers\ReturnObject;
+use \Alekhin\FrontEndUser\FrontEndUser;
 
 class Settings {
 
@@ -31,7 +32,7 @@ class Settings {
     }
 
     static function save_changes() {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->users_can_register = intval(trim(filter_input(INPUT_POST, 'users_can_register'))) === 1;
         $r->data->disable_default_login = intval(trim(filter_input(INPUT_POST, 'disable_default_login'))) === 1;
         $r->data->restrict_wp_admin = intval(trim(filter_input(INPUT_POST, 'restrict_wp_admin'))) === 1;
@@ -117,7 +118,7 @@ class Settings {
     }
 
     static function view_admin() {
-        include \FrontEndUser\dir . '/views/admin/settings.php';
+        include FrontEndUser::get_dir('/views/admin/settings.php');
     }
 
     static function initialize() {

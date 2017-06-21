@@ -2,8 +2,8 @@
 
 namespace Alekhin\FrontEndUser;
 
-use Alekhin\Helpers\return_object;
-use Alekhin\FrontEndUser\Admin\pages;
+use Alekhin\WebsiteHelpers\ReturnObject;
+use Alekhin\FrontEndUser\Admin\Pages;
 
 class Reset {
 
@@ -36,7 +36,7 @@ class Reset {
     }
 
     static function reset_preparation() {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->key = isset($_GET['key']) ? $_GET['key'] : NULL;
         $r->data->username = isset($_GET['login']) ? $_GET['login'] : NULL;
 
@@ -48,7 +48,7 @@ class Reset {
 
         $r->data->user = check_password_reset_key($r->data->key, $r->data->username);
         if (!$r->data->user || is_wp_error($r->data->user)) {
-            setcookie($cookie_name, ' ', time() - YEAR_IN_SECONDS, pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
+            setcookie($cookie_name, ' ', time() - YEAR_IN_SECONDS, Pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
             if ($r->data->user && $r->data->user->get_error_code() === 'expired_key') {
                 $r->message = 'The reset password window has already expired!';
             } else {
@@ -58,16 +58,16 @@ class Reset {
         }
 
         $value = sprintf('%s:%s', wp_unslash($r->data->username), wp_unslash($r->data->key));
-        setcookie($cookie_name, $value, 0, pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
+        setcookie($cookie_name, $value, 0, Pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
 
         $r->success = TRUE;
         $r->message = 'Reset password link validated!';
-        $r->redirect = pages::get_page_url('reset');
+        $r->redirect = Pages::get_page_url('reset');
         return $r;
     }
 
     static function reset_password() {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->key = isset($_POST['reset_key']) ? $_POST['reset_key'] : NULL;
         $r->data->username = isset($_POST['reset_username']) ? $_POST['reset_username'] : NULL;
         $r->data->password1 = isset($_POST['reset_password1']) ? $_POST['reset_password1'] : NULL;
@@ -93,7 +93,7 @@ class Reset {
 
         $r->data->user = check_password_reset_key($r->data->key, $r->data->username);
         if (!$r->data->user || is_wp_error($r->data->user)) {
-            setcookie($cookie_name, ' ', time() - YEAR_IN_SECONDS, pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
+            setcookie($cookie_name, ' ', time() - YEAR_IN_SECONDS, Pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
             if ($r->data->user && $r->data->user->get_error_code() === 'expired_key') {
                 $r->message = 'The reset password window has already expired!';
             }
@@ -114,7 +114,7 @@ class Reset {
         }
 
         reset_password($r->data->user, $r->data->password1);
-        setcookie($cookie_name, ' ', time() - YEAR_IN_SECONDS, pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
+        setcookie($cookie_name, ' ', time() - YEAR_IN_SECONDS, Pages::get_page_url('reset'), COOKIE_DOMAIN, is_ssl(), TRUE);
 
         $r->success = TRUE;
         $r->message = 'Your password has been changed successfully!';
@@ -129,7 +129,7 @@ class Reset {
     }
 
     static function on_template_redirect() {
-        if (get_the_ID() !== pages::get_pages('reset')) {
+        if (get_the_ID() !== Pages::get_pages('reset')) {
             return;
         }
 
@@ -157,7 +157,7 @@ class Reset {
     }
 
     static function filter_the_content($the_content) {
-        if (get_the_ID() !== pages::get_pages('reset')) {
+        if (get_the_ID() !== Pages::get_pages('reset')) {
             return $the_content;
         }
 

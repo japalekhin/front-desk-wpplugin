@@ -2,9 +2,9 @@
 
 namespace Alekhin\FrontEndUser;
 
-use Alekhin\Helpers\return_object;
-use Alekhin\FrontEndUser\Admin\pages;
-use Alekhin\FrontEndUser\Admin\settings;
+use Alekhin\WebsiteHelpers\ReturnObject;
+use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontEndUser\Admin\Settings;
 
 class Register {
 
@@ -13,7 +13,7 @@ class Register {
     static $p = NULL;
 
     static function raw_register($data, $bypass = FALSE) {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data = $data;
         $r->data->user = FALSE;
 
@@ -85,12 +85,12 @@ class Register {
 
         $r->success = TRUE;
         $r->message = 'You are now registered!';
-        $r->redirect = (pages::get_pages('login') > 0) ? pages::get_page_url('login') : $r->redirect;
+        $r->redirect = (Pages::get_pages('login') > 0) ? Pages::get_page_url('login') : $r->redirect;
         return $r;
     }
 
     static function form_register() {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->user_ID = 0;
         $r->data->firstname = trim(filter_input(INPUT_POST, 'register_firstname'));
         $r->data->lastname = trim(filter_input(INPUT_POST, 'register_lastname'));
@@ -109,7 +109,7 @@ class Register {
             return $r;
         }
 
-        if (!settings::users_can_register()) {
+        if (!Settings::users_can_register()) {
             $r->message = 'Sorry user registration is not allowed right now!';
             return $r;
         }
@@ -125,7 +125,7 @@ class Register {
     }
 
     static function on_template_redirect() {
-        if (get_the_ID() !== pages::get_pages('register')) {
+        if (get_the_ID() !== Pages::get_pages('register')) {
             return;
         }
 
@@ -134,8 +134,8 @@ class Register {
             exit;
         }
 
-        if (!settings::users_can_register()) {
-            wp_redirect(pages::get_pages('login') > 0 ? pages::get_page_url('login') : home_url());
+        if (!Settings::users_can_register()) {
+            wp_redirect(Pages::get_pages('login') > 0 ? Pages::get_page_url('login') : home_url());
             exit;
         }
 
@@ -147,7 +147,7 @@ class Register {
     }
 
     static function filter_the_content($the_content) {
-        if (get_the_ID() !== pages::get_pages('register')) {
+        if (get_the_ID() !== Pages::get_pages('register')) {
             return $the_content;
         }
 

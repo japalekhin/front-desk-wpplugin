@@ -1,0 +1,40 @@
+#page_admin_theme tr.theme-row input[type=radio] {
+    display: none;
+}
+#page_admin_theme tr.theme-row label {
+    background-color: #fff;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: 2%;
+    max-width: 180px;
+    padding: 10px;
+    text-align: center;
+    width: 23%;
+}
+#page_admin_theme tr.theme-row input[type=radio]:checked + label {
+    background-color: #ddd;
+}
+#page_admin_theme tr.theme-row label:before {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+#page_admin_theme tr.theme-row label.theme-0:before {
+    background-image: url('../images/style-0.svg');
+}
+#page_admin_theme tr.theme-row label.theme-1:before {
+    background-image: url('../images/style-1.svg');
+}
+#page_admin_theme tr.theme-row label.theme-2:before {
+    background-image: url('../images/style-2.svg');
+}
+#page_admin_theme tr.theme-row label.theme-3:before {
+    background-image: url('../images/style-3.svg');
+}
+
+#page_admin_theme #txt_custom_css {
+    font-family: 'Courier New', monospace;
+}

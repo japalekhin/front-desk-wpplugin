@@ -2,7 +2,8 @@
 
 namespace Alekhin\FrontEndUser\Admin;
 
-use Alekhin\Helpers\return_object;
+use Alekhin\WebsiteHelpers\ReturnObject;
+use \Alekhin\FrontEndUser\FrontEndUser;
 
 class Menu {
 
@@ -21,7 +22,7 @@ class Menu {
     }
 
     static function save_settings () {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->enabled = intval(trim(filter_input(INPUT_POST, 'enable'))) === 1;
         $r->data->menu_type = 'none';
         $r->data->menu_key = '0';
@@ -91,7 +92,7 @@ class Menu {
     }
 
     static function view_admin () {
-        include \FrontEndUser\dir . '/views/admin/menu.php';
+        include FrontEndUser::get_dir('/views/admin/menu.php');
     }
 
     static function initialize () {

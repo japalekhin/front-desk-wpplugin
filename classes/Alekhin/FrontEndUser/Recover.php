@@ -2,10 +2,10 @@
 
 namespace Alekhin\FrontEndUser;
 
-use Alekhin\Helpers\return_object;
-use Alekhin\Helpers\address;
-use Alekhin\Helpers\WordPress\emailer;
-use Alekhin\FrontEndUser\Admin\pages;
+use Alekhin\WebsiteHelpers\ReturnObject;
+use Alekhin\WebsiteHelpers\Address;
+use Alekhin\WordPressHelpers\Emailer;
+use Alekhin\FrontEndUser\Admin\Pages;
 
 class Recover {
 
@@ -14,17 +14,17 @@ class Recover {
     static $p = NULL;
 
     static function create_reset_link($username, $key) {
-        if (pages::get_pages('reset') === 0) {
+        if (Pages::get_pages('reset') === 0) {
             return home_url();
         }
-        $a = new address(pages::get_page_url('reset'));
+        $a = new Address(Pages::get_page_url('reset'));
         $a->query['login'] = $username;
         $a->query['key'] = $key;
         return $a->url();
     }
 
     static function recover_password() {
-        $r = new return_object();
+        $r = new ReturnObject();
         $r->data->username = trim(filter_input(INPUT_POST, 'recover_username'));
         $r->data->user = null;
 
@@ -60,7 +60,7 @@ class Recover {
         $html .= '<a href="' . $reset_url . '">' . $reset_url . '</a>';
         $html .= '</p>';
 
-        if (!emailer::send($r->data->user->data->user_email, 'Password reset link', $html)) {
+        if (!Emailer::send($r->data->user->data->user_email, 'Password reset link', $html)) {
             $r->message = 'The email could not be sent.';
             // $r->redirect = $reset_url; // testing only
             return $r;
@@ -79,7 +79,7 @@ class Recover {
     }
 
     static function on_template_redirect() {
-        if (get_the_ID() !== pages::get_pages('recover')) {
+        if (get_the_ID() !== Pages::get_pages('recover')) {
             return;
         }
 
@@ -96,7 +96,7 @@ class Recover {
     }
 
     static function filter_the_content($the_content) {
-        if (get_the_ID() !== pages::get_pages('recover')) {
+        if (get_the_ID() !== Pages::get_pages('recover')) {
             return $the_content;
         }
 

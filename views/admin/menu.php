@@ -1,10 +1,10 @@
 <?php
 
-use FrontEndUser\Admin\menu;
+use Alekhin\FrontEndUser\Admin\Menu;
 
 $locations = get_registered_nav_menus();
 $menus = get_terms('nav_menu');
-$settings = menu::get_settings();
+$settings = Menu::get_settings();
 ?>
 <div class="wrap">
     <h2>Front-End User &mdash; Menu Integration</h2>

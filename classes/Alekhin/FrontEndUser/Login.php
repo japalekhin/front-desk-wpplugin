@@ -2,8 +2,8 @@
 
 namespace Alekhin\FrontEndUser;
 
-use Alekhin\Helpers\return_object;
-use Alekhin\FrontEndUser\Admin\pages;
+use Alekhin\WebsiteHelpers\ReturnObject;
+use Alekhin\FrontEndUser\Admin\Pages;
 
 class Login {
 
@@ -12,7 +12,7 @@ class Login {
     static $p = NULL;
 
     static function login() {
-        $r = new return_object();
+        $r = new ReturnObject();
 
         if (is_null($r->data->username = filter_input(INPUT_POST, 'login_username'))) {
             $r->data->username = '';
@@ -71,7 +71,7 @@ class Login {
     }
 
     static function on_template_redirect() {
-        if (get_the_ID() !== pages::get_pages('login')) {
+        if (get_the_ID() !== Pages::get_pages('login')) {
             return;
         }
 
@@ -88,7 +88,7 @@ class Login {
     }
 
     static function filter_the_content($the_content) {
-        if (get_the_ID() !== pages::get_pages('login')) {
+        if (get_the_ID() !== Pages::get_pages('login')) {
             return $the_content;
         }
 
