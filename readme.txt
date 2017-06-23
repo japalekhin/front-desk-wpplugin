@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Front-End User ===
 Contributors: japaalekhinllemos
 Donate link: https://alekhin.llemos.com/support
 Tags: front-end, login, sign-in, register, registration sign-up, password recovery, reset password, password reset
@@ -29,7 +29,6 @@ Just install like you normally do with any WordPress plugin.
 1. Activate the plugin through the 'Plugins' menu in WordPress Admin
 1. Customize your settings through the 'Front-End Users' menu.
 1. Done!
-
 
 == Frequently Asked Questions ==
 
