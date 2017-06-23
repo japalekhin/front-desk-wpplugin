@@ -1,7 +1,7 @@
 {
     "name": "alekhin/website-helpers",
     "description": "Classes that make PHP programming a website easier.",
-    "license": "GPL-2.0",
+    "license": "GPL-3.0",
     "keywords": ["website", "website helpers"],
     "authors": [
         {

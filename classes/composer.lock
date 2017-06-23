@@ -1,0 +1,148 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "8555b8b15a0b512cfb1214adf463b3e4",
+    "packages": [
+        {
+            "name": "alekhin/website-helpers",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/japalekhin/website-helpers.git",
+                "reference": "c160d52f065259b7e32ec6185f4877f2d745cac0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/japalekhin/website-helpers/zipball/c160d52f065259b7e32ec6185f4877f2d745cac0",
+                "reference": "c160d52f065259b7e32ec6185f4877f2d745cac0",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alekhin\\WebsiteHelpers\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Japa Alekhin Llemos",
+                    "email": "alekhin@llemos.com"
+                }
+            ],
+            "description": "Classes that make PHP programming a website easier.",
+            "keywords": [
+                "website",
+                "website helpers"
+            ],
+            "time": "2017-06-23T05:32:07+00:00"
+        },
+        {
+            "name": "alekhin/wordpress-helpers",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/japalekhin/wordpress-helpers.git",
+                "reference": "c22afa4ef204bad44eeb15940b612dc44798d919"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/japalekhin/wordpress-helpers/zipball/c22afa4ef204bad44eeb15940b612dc44798d919",
+                "reference": "c22afa4ef204bad44eeb15940b612dc44798d919",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alekhin\\WordPressHelpers\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Japa Alekhin Llemos",
+                    "email": "alekhin@llemos.com"
+                }
+            ],
+            "description": "Classes that make programming a WordPress website easier.",
+            "keywords": [
+                "wordpress",
+                "wordpress helpers"
+            ],
+            "time": "2017-06-23T05:33:35+00:00"
+        },
+        {
+            "name": "symfony/class-loader",
+            "version": "v3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/class-loader.git",
+                "reference": "386a294d621576302e7cc36965d6ed53b8c73c4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/class-loader/zipball/386a294d621576302e7cc36965d6ed53b8c73c4f",
+                "reference": "386a294d621576302e7cc36965d6ed53b8c73c4f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/finder": "~2.8|~3.0",
+                "symfony/polyfill-apcu": "~1.1"
+            },
+            "suggest": {
+                "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\ClassLoader\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony ClassLoader Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-06-02T09:51:43+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

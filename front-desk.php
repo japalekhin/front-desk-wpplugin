@@ -1,32 +1,32 @@
 <?php
 
 /*
-  Plugin Name: Front-End User
-  Plugin URI:  https://alekhin.llemos.com/front-end-user
-  Description: A WP plugin that enables front-end user functionality including login, register, password recovery and profile editor.
+  Plugin Name: Front Desk
+  Plugin URI:  https://alekhin.llemos.com/front-desk
+  Description: A WP plugin that enables front-end functionality including login, register, password recovery and profile editor.
   Version:     1.0.0
   Author:      Alekhin
   Author URI:  https://alekhin.llemos.com
   License:     GPLv3
   License URI: https://www.gnu.org/licenses/gpl-3.0.html
-  Text Domain: frontenduser
+  Text Domain: front-desk
   Domain Path: /languages
 
-  Front-End User is free software: you can redistribute it and/or modify it
-  under the terms of the GNU General Public License as published by the Free
-  Software Foundation, either version 3 of the License, or any later version.
+  Front Desk is free software: you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or any later version.
 
-  Front-End User is distributed in the hope that it will be useful, but WITHOUT
-  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-  FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+  Front Desk is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+  A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License along with
-  Front-End User.
+  Front Desk.
 
   If not, see https://www.gnu.org/licenses/gpl-3.0.html.
  */
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
 if (!defined('ABSPATH')) {
     echo 'really?';
@@ -40,10 +40,10 @@ define(__NAMESPACE__ . '\url', plugin_dir_url(__FILE__));
 require_once dir . 'classes/vendor/autoload.php';
 
 $symfony_loader = new \Symfony\Component\ClassLoader\Psr4ClassLoader();
-$symfony_loader->addPrefix('Alekhin\FrontEndUser\\', dir . str_replace('/', DIRECTORY_SEPARATOR, 'classes/Alekhin/FrontEndUser'));
+$symfony_loader->addPrefix('Alekhin\FrontDesk\\', dir . str_replace('/', DIRECTORY_SEPARATOR, 'classes/Alekhin/FrontDesk'));
 $symfony_loader->register();
 
-FrontEndUser::initialize();
+FrontDesk::initialize();
 
 Admin\Admin::initialize();
 Admin\Theme::initialize();

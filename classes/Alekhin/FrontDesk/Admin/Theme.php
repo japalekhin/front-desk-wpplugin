@@ -1,17 +1,17 @@
 <?php
 
-namespace Alekhin\FrontEndUser\Admin;
+namespace Alekhin\FrontDesk\Admin;
 
-use Alekhin\FrontEndUser\Admin\Pages;
-use Alekhin\FrontEndUser\FrontEndUser;
+use Alekhin\FrontDesk\Admin\Pages;
+use Alekhin\FrontDesk\FrontDesk;
 use Alekhin\WebsiteHelpers\ReturnObject;
 
 class Theme {
 
     const session_key_posted = __CLASS__ . '_posted';
-    const option_key_themes = 'feu_themes';
-    const option_key_custom_css = 'feu_custom_css';
-    const option_key_style_version = 'feu_style_version';
+    const option_key_themes = 'frd_themes';
+    const option_key_custom_css = 'frd_custom_css';
+    const option_key_style_version = 'frd_style_version';
 
     static $p = NULL;
 
@@ -23,7 +23,7 @@ class Theme {
         }
         $r->data->custom_css = trim(filter_input(INPUT_POST, 'custom_css'));
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_theme')), 'front_end_user_theme')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_theme')), 'front_desk_theme')) {
             $r->message = 'Invalid request session!';
             return $r;
         }
@@ -64,11 +64,11 @@ class Theme {
     }
 
     static function on_admin_menu() {
-        add_submenu_page('front-end-user', 'Front-End User - Themes', 'Theme', 'manage_options', 'front-end-user', [__CLASS__, 'view_admin',]);
+        add_submenu_page('front-desk', 'Front Desk - Themes', 'Theme', 'manage_options', 'front-desk', [__CLASS__, 'view_admin',]);
     }
 
     static function on_current_screen() {
-        if (get_current_screen()->id !== 'toplevel_page_front-end-user') {
+        if (get_current_screen()->id !== 'toplevel_page_front-desk') {
             return;
         }
 
@@ -80,7 +80,7 @@ class Theme {
     }
 
     static function on_admin_notices() {
-        if (get_current_screen()->id !== 'toplevel_page_front-end-user') {
+        if (get_current_screen()->id !== 'toplevel_page_front-desk') {
             return;
         }
 
@@ -99,7 +99,7 @@ class Theme {
     }
 
     static function view_admin() {
-        include FrontEndUser::get_dir('/views/admin/theme.php');
+        include FrontDesk::get_dir('/views/admin/theme.php');
     }
 
     static function initialize() {

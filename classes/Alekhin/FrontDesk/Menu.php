@@ -1,10 +1,10 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
-use Alekhin\FrontEndUser\Admin\Menu as AdMenu;
-use Alekhin\FrontEndUser\Admin\Pages;
-use Alekhin\FrontEndUser\Admin\Settings;
+use Alekhin\FrontDesk\Admin\Menu as AdMenu;
+use Alekhin\FrontDesk\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Settings;
 
 class Menu {
 

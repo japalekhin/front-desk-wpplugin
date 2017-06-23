@@ -1,9 +1,9 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
-use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Pages;
 
 class Login {
 
@@ -23,7 +23,7 @@ class Login {
         }
         $r->data->remember = filter_input(INPUT_POST, 'login_remember') == 'yes';
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_login')), 'front_end_user_login')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_login')), 'front_desk_login')) {
             $r->message = 'Invalid request session!';
             return $r;
         }

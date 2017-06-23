@@ -1,14 +1,14 @@
 <?php
 
-namespace Alekhin\FrontEndUser\Admin;
+namespace Alekhin\FrontDesk\Admin;
 
 use \Alekhin\WebsiteHelpers\ReturnObject;
-use \Alekhin\FrontEndUser\FrontEndUser;
+use \Alekhin\FrontDesk\FrontDesk;
 
 class Pages {
 
     const session_key_posted = __CLASS__ . '_posted';
-    const option_key_pages = 'feu_pages';
+    const option_key_pages = 'frd_pages';
 
     static $p = NULL;
 
@@ -40,7 +40,7 @@ class Pages {
             $r->data->pages[$page_key] = intval(trim(filter_input(INPUT_POST, 'page_' . $page_key)));
         }
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_pages')), 'front_end_user_pages')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_pages')), 'front_desk_pages')) {
             $r->message = 'Invalid request session!';
             return $r;
         }
@@ -79,11 +79,11 @@ class Pages {
     }
 
     static function on_admin_menu() {
-        add_submenu_page('front-end-user', 'Front-End User - Pages', 'Pages', 'manage_options', 'front-end-user-pages', [__CLASS__, 'view_admin',]);
+        add_submenu_page('front-desk', 'Front Desk - Pages', 'Pages', 'manage_options', 'front-desk-pages', [__CLASS__, 'view_admin',]);
     }
 
     static function on_current_screen() {
-        if (get_current_screen()->id !== 'front-end-user_page_front-end-user-pages') {
+        if (get_current_screen()->id !== 'front-desk_page_front-desk-pages') {
             return;
         }
 
@@ -95,7 +95,7 @@ class Pages {
     }
 
     static function on_admin_notices() {
-        if (get_current_screen()->id !== 'front-end-user_page_front-end-user-pages') {
+        if (get_current_screen()->id !== 'front-desk_page_front-desk-pages') {
             return;
         }
 
@@ -114,7 +114,7 @@ class Pages {
     }
 
     static function view_admin() {
-        include FrontEndUser::get_dir('/views/admin/pages.php');
+        include FrontDesk::get_dir('/views/admin/pages.php');
     }
 
     static function initialize() {

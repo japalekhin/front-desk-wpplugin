@@ -1,9 +1,9 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
-use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Pages;
 
 class Profile {
 
@@ -31,7 +31,7 @@ class Profile {
             $r->data->password2 = '';
         }
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_profile')), 'front_end_user_profile')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_profile')), 'front_desk_profile')) {
             $r->message = 'Invalid request session!';
             return $r;
         }

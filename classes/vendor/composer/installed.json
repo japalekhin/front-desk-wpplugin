@@ -59,20 +59,20 @@
     },
     {
         "name": "alekhin/website-helpers",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/japalekhin/website-helpers.git",
-            "reference": "99521465fb2858dac3e60596b5bafbd1bf06e1d6"
+            "reference": "c160d52f065259b7e32ec6185f4877f2d745cac0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/japalekhin/website-helpers/zipball/99521465fb2858dac3e60596b5bafbd1bf06e1d6",
-            "reference": "99521465fb2858dac3e60596b5bafbd1bf06e1d6",
+            "url": "https://api.github.com/repos/japalekhin/website-helpers/zipball/c160d52f065259b7e32ec6185f4877f2d745cac0",
+            "reference": "c160d52f065259b7e32ec6185f4877f2d745cac0",
             "shasum": ""
         },
-        "time": "2017-06-23T05:07:28+00:00",
+        "time": "2017-06-23T05:32:07+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -82,7 +82,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GPL-2.0"
+            "GPL-3.0"
         ],
         "authors": [
             {
@@ -98,20 +98,20 @@
     },
     {
         "name": "alekhin/wordpress-helpers",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/japalekhin/wordpress-helpers.git",
-            "reference": "c12b171479e3c976dff1a1687d8cf55a6b850c12"
+            "reference": "c22afa4ef204bad44eeb15940b612dc44798d919"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/japalekhin/wordpress-helpers/zipball/c12b171479e3c976dff1a1687d8cf55a6b850c12",
-            "reference": "c12b171479e3c976dff1a1687d8cf55a6b850c12",
+            "url": "https://api.github.com/repos/japalekhin/wordpress-helpers/zipball/c22afa4ef204bad44eeb15940b612dc44798d919",
+            "reference": "c22afa4ef204bad44eeb15940b612dc44798d919",
             "shasum": ""
         },
-        "time": "2017-06-23T05:08:24+00:00",
+        "time": "2017-06-23T05:33:35+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -121,7 +121,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GPL-2.0"
+            "GPL-3.0"
         ],
         "authors": [
             {

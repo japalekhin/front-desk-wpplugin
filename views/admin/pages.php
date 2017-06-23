@@ -1,15 +1,15 @@
 <?php
 
-use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Pages;
 
 $system_pages = Pages::get_system_pages();
 $wp_pages = Pages::get_wordpress_pages();
 ?>
 <div class="wrap">
-    <h2>Front-End User &mdash; Pages</h2>
+    <h2>Front Desk &mdash; Pages</h2>
 
     <form action="<?php echo filter_input(INPUT_SERVER, 'REQUEST_URI'); ?>" method="POST">
-        <?php wp_nonce_field('front_end_user_pages', 'front_end_user_pages'); ?>
+        <?php wp_nonce_field('front_desk_pages', 'front_desk_pages'); ?>
         <table class="form-table">
             <tbody>
                 <?php foreach ($system_pages as $sp_key => $sp_label): ?>

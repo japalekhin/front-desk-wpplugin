@@ -1,12 +1,12 @@
 <?php
 
-use Alekhin\FrontEndUser\Admin\Settings;
+use Alekhin\FrontDesk\Admin\Settings;
 ?>
 <div class="wrap">
-    <h2>Front-End User &mdash; Settings</h2>
+    <h2>Front Desk &mdash; Settings</h2>
 
     <form action="<?php echo filter_input(INPUT_SERVER, 'REQUEST_URI'); ?>" method="POST">
-        <?php wp_nonce_field('front_end_user_settings', 'front_end_user_settings'); ?>
+        <?php wp_nonce_field('front_desk_settings', 'front_desk_settings'); ?>
         <table class="form-table">
             <tbody>
                 <tr>

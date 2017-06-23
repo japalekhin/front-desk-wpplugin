@@ -1,9 +1,9 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
-use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Pages;
 
 class Reset {
 
@@ -86,7 +86,7 @@ class Reset {
             return $r;
         }
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_reset')), 'front_end_user_reset')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_reset')), 'front_desk_reset')) {
             $r->message = 'Invalid request session!';
             return $r;
         }

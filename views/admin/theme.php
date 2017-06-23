@@ -1,15 +1,15 @@
 <?php
 
-use Alekhin\FrontEndUser\Admin\Theme;
-use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Theme;
+use Alekhin\FrontDesk\Admin\Pages;
 
 $system_pages = Pages::get_system_pages();
 ?>
 <div id="page_admin_theme" class="wrap">
-    <h2>Front-End User &mdash; Theme</h2>
+    <h2>Front Desk &mdash; Theme</h2>
 
     <form action="<?php echo filter_input(INPUT_SERVER, 'REQUEST_URI'); ?>" method="POST">
-        <?php wp_nonce_field('front_end_user_theme', 'front_end_user_theme'); ?>
+        <?php wp_nonce_field('front_desk_theme', 'front_desk_theme'); ?>
         <table class="form-table">
             <tbody>
                 <?php foreach ($system_pages as $sp_key => $sp_label): ?>

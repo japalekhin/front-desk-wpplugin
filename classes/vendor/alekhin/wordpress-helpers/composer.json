@@ -1,7 +1,7 @@
 {
     "name": "alekhin/wordpress-helpers",
     "description": "Classes that make programming a WordPress website easier.",
-    "license": "GPL-2.0",
+    "license": "GPL-3.0",
     "keywords": ["wordpress", "wordpress helpers"],
     "authors": [
         {

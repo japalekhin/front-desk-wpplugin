@@ -1,11 +1,11 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
 use Alekhin\WebsiteHelpers\Address;
 use Alekhin\WordPressHelpers\Emailer;
-use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Pages;
 
 class Recover {
 
@@ -28,7 +28,7 @@ class Recover {
         $r->data->username = trim(filter_input(INPUT_POST, 'recover_username'));
         $r->data->user = null;
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_recover')), 'front_end_user_recover')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_recover')), 'front_desk_recover')) {
             $r->message = 'Invalid request session!';
             return $r;
         }

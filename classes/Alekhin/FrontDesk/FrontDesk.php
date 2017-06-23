@@ -1,8 +1,8 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
-class FrontEndUser {
+class FrontDesk {
 
     static function get_ss_version() {
         return version;

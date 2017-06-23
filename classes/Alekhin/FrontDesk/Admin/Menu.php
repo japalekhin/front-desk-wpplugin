@@ -1,14 +1,14 @@
 <?php
 
-namespace Alekhin\FrontEndUser\Admin;
+namespace Alekhin\FrontDesk\Admin;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
-use \Alekhin\FrontEndUser\FrontEndUser;
+use \Alekhin\FrontDesk\FrontDesk;
 
 class Menu {
 
     const session_key_posted = __CLASS__ . '_posted';
-    const option_key_menu_settings = 'feu_menu_integration';
+    const option_key_menu_settings = 'frd_menu_integration';
 
     static $p = NULL;
 
@@ -37,7 +37,7 @@ class Menu {
             }
         }
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_menu')), 'front_end_user_menu')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_menu')), 'front_desk_menu')) {
             $r->message = 'Invalid request session!';
             return $r;
         }
@@ -57,11 +57,11 @@ class Menu {
     }
 
     static function on_admin_menu () {
-        add_submenu_page('front-end-user', 'Front-End User - Menu Integration', 'Menu Integration', 'manage_options', 'front-end-user-menu', [__CLASS__, 'view_admin',]);
+        add_submenu_page('front-desk', 'Front Desk - Menu Integration', 'Menu Integration', 'manage_options', 'front-desk-menu', [__CLASS__, 'view_admin',]);
     }
 
     static function on_current_screen() {
-        if (get_current_screen()->id !== 'front-end-user_page_front-end-user-menu') {
+        if (get_current_screen()->id !== 'front-desk_page_front-desk-menu') {
             return;
         }
 
@@ -73,7 +73,7 @@ class Menu {
     }
 
     static function on_admin_notices() {
-        if (get_current_screen()->id !== 'front-end-user_page_front-end-user-menu') {
+        if (get_current_screen()->id !== 'front-desk_page_front-desk-menu') {
             return;
         }
 
@@ -92,7 +92,7 @@ class Menu {
     }
 
     static function view_admin () {
-        include FrontEndUser::get_dir('/views/admin/menu.php');
+        include FrontDesk::get_dir('/views/admin/menu.php');
     }
 
     static function initialize () {

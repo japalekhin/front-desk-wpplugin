@@ -1,16 +1,16 @@
 <?php
 
-use Alekhin\FrontEndUser\Admin\Menu;
+use Alekhin\FrontDesk\Admin\Menu;
 
 $locations = get_registered_nav_menus();
 $menus = get_terms('nav_menu');
 $settings = Menu::get_settings();
 ?>
 <div class="wrap">
-    <h2>Front-End User &mdash; Menu Integration</h2>
+    <h2>Front Desk &mdash; Menu Integration</h2>
 
     <form action="<?php echo filter_input(INPUT_SERVER, 'REQUEST_URI'); ?>" method="POST">
-        <?php wp_nonce_field('front_end_user_menu', 'front_end_user_menu'); ?>
+        <?php wp_nonce_field('front_desk_menu', 'front_desk_menu'); ?>
         <table class="form-table">
             <tbody>
                 <tr>

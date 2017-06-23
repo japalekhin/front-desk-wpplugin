@@ -1,17 +1,17 @@
 <?php
 
-namespace Alekhin\FrontEndUser\Admin;
+namespace Alekhin\FrontDesk\Admin;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
-use \Alekhin\FrontEndUser\FrontEndUser;
+use \Alekhin\FrontDesk\FrontDesk;
 
 class Settings {
 
     const session_key_posted = __CLASS__ . '_posted';
     const option_key_users_can_register = 'users_can_register';
-    const option_key_disable_default_login = 'feu_disable_default_login';
-    const option_key_restrict_wp_admin = 'feu_restrict_wp_admin';
-    const option_key_hide_admin_toolbar = 'feu_hide_admin_toolbar';
+    const option_key_disable_default_login = 'frd_disable_default_login';
+    const option_key_restrict_wp_admin = 'frd_restrict_wp_admin';
+    const option_key_hide_admin_toolbar = 'frd_hide_admin_toolbar';
 
     static $p = NULL;
 
@@ -38,7 +38,7 @@ class Settings {
         $r->data->restrict_wp_admin = intval(trim(filter_input(INPUT_POST, 'restrict_wp_admin'))) === 1;
         $r->data->hide_admin_toolbar = intval(trim(filter_input(INPUT_POST, 'hide_admin_toolbar'))) === 1;
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_settings')), 'front_end_user_settings')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_settings')), 'front_desk_settings')) {
             $r->message = 'Invalid request session!';
             return $r;
         }
@@ -87,11 +87,11 @@ class Settings {
     }
 
     static function on_admin_menu() {
-        add_submenu_page('front-end-user', 'Front-End User - Settings', 'Settings', 'manage_options', 'front-end-user-settings', [__CLASS__, 'view_admin',]);
+        add_submenu_page('front-desk', 'Front  - Settings', 'Settings', 'manage_options', 'front-desk-settings', [__CLASS__, 'view_admin',]);
     }
 
     static function on_current_screen() {
-        if (get_current_screen()->id !== 'front-end-user_page_front-end-user-settings') {
+        if (get_current_screen()->id !== 'front-desk_page_front-desk-settings') {
             return;
         }
 
@@ -103,7 +103,7 @@ class Settings {
     }
 
     static function on_admin_notices() {
-        if (get_current_screen()->id !== 'front-end-user_page_front-end-user-settings') {
+        if (get_current_screen()->id !== 'front-desk_page_front-desk-settings') {
             return;
         }
 
@@ -122,7 +122,7 @@ class Settings {
     }
 
     static function view_admin() {
-        include FrontEndUser::get_dir('/views/admin/settings.php');
+        include FrontDesk::get_dir('/views/admin/settings.php');
     }
 
     static function initialize() {

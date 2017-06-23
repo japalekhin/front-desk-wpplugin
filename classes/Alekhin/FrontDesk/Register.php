@@ -1,10 +1,10 @@
 <?php
 
-namespace Alekhin\FrontEndUser;
+namespace Alekhin\FrontDesk;
 
 use Alekhin\WebsiteHelpers\ReturnObject;
-use Alekhin\FrontEndUser\Admin\Pages;
-use Alekhin\FrontEndUser\Admin\Settings;
+use Alekhin\FrontDesk\Admin\Pages;
+use Alekhin\FrontDesk\Admin\Settings;
 
 class Register {
 
@@ -105,7 +105,7 @@ class Register {
         }
         $r->data->terms = filter_input(INPUT_POST, 'register_terms') == 'agree';
 
-        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_register')), 'front_end_user_register')) {
+        if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_desk_register')), 'front_desk_register')) {
             $r->message = 'Invalid request session!';
             return $r;
         }
