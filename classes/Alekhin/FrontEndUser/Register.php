@@ -78,9 +78,10 @@ class Register {
             $r->message = 'An error occurred while creating the new user.';
             return $r;
         }
-        if (isset($r->data->social_type) && isset($r->data->social_id)) {
-            users::set_social_id($r->data->user_ID, $r->data->social_type, $r->data->social_id);
-        }
+        // login by social account, reserved functionality for later
+        //if (isset($r->data->social_type) && isset($r->data->social_id)) {
+        //    users::set_social_id($r->data->user_ID, $r->data->social_type, $r->data->social_id);
+        //}
         $r->data->user = get_user_by('id', $r->data->user_ID);
 
         $r->success = TRUE;

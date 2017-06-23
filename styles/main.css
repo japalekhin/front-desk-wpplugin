@@ -1,3 +1,19 @@
+.notice {
+    border: solid 1px #aaa;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+    padding: 1em 1.5em;
+}
+.notice-success {
+    background-color: #fafffa;
+    border-color: #080;
+    color: #080;
+}
+.notice-error {
+    background-color: #fffafa;
+    border-color: #800;
+    color: #800;
+}
 .feu-theme-1 .feu-form-field,
 .feu-theme-2 .feu-form-field,
 .feu-theme-3 .feu-form-field {
