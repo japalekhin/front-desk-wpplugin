@@ -53,6 +53,21 @@ class Menu {
         return $l;
     }
 
+    static function get_menu_item_profile($parent_id = 0) {
+        if (($page_id = Pages::get_pages('profile')) === 0) {
+            return NULL;
+        }
+
+        $l = new \stdClass();
+        $l->title = get_the_title($page_id);
+        $l->attr_title = $l->title;
+        $l->menu_item_parent = $parent_id;
+        $l->ID = '';
+        $l->url = Pages::get_page_url('profile');
+        $l->db_id = $page_id;
+        return $l;
+    }
+
     static function get_menu_item_wp_admin($parent_id = 0) {
         $l = new \stdClass();
         $l->title = 'WP Admin';
@@ -95,6 +110,11 @@ class Menu {
         }
 
         if (is_user_logged_in()) {
+            // add profile editor page link
+            if (!is_null($profile_item = self::get_menu_item_profile())) {
+                $items[] = $profile_item;
+            }
+
             // add /wp-admin link to logged in admin users
             if (current_user_can('manage_options') && $settings->show_wp_admin) {
                 $items[] = self::get_menu_item_wp_admin();
@@ -107,6 +127,7 @@ class Menu {
             $login_item = self::get_menu_item_login();
             if (!is_null($login_item)) {
                 $items[] = $login_item;
+
                 if (!is_null($recover_item = self::get_menu_item_recover($login_item->db_id))) {
                     $items[] = $recover_item;
                 }

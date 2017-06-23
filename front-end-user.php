@@ -53,17 +53,16 @@ Admin\Menu::initialize();
 Admin\Settings::initialize();
 
 Menu::initialize();
+Theme::initialize();
 Login::initialize();
 Register::initialize();
 Reset::initialize();
 Recover::initialize();
 //TwoStep::initialize();
-Theme::initialize();
+Profile::initialize();
 
 $loader = new \Alekhin\WebsiteHelpers\ReturnObject();
 
-// TODO: basic styles
-// TODO: limit failed login attempts
 // TODO: profile page
 // --------------- BREAKING POINT ---------------
 // TODO: additional fields in profile and registration (filter)

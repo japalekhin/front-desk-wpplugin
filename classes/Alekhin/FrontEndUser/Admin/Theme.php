@@ -2,8 +2,9 @@
 
 namespace Alekhin\FrontEndUser\Admin;
 
-use \Alekhin\FrontEndUser\FrontEndUser;
-use \Alekhin\WebsiteHelpers\ReturnObject;
+use Alekhin\FrontEndUser\Admin\Pages;
+use Alekhin\FrontEndUser\FrontEndUser;
+use Alekhin\WebsiteHelpers\ReturnObject;
 
 class Theme {
 
@@ -17,10 +18,9 @@ class Theme {
     static function save_theme_settings() {
         $r = new ReturnObject();
         $r->data->themes = [];
-        $r->data->themes['login'] = max(0, min(3, intval(trim(filter_input(INPUT_POST, 'theme_login')))));
-        $r->data->themes['register'] = max(0, min(3, intval(trim(filter_input(INPUT_POST, 'theme_register')))));
-        $r->data->themes['recover'] = max(0, min(3, intval(trim(filter_input(INPUT_POST, 'theme_recover')))));
-        $r->data->themes['reset'] = max(0, min(3, intval(trim(filter_input(INPUT_POST, 'theme_reset')))));
+        foreach (Pages::get_system_pages() as $page_key => $page_title) {
+            $r->data->themes[$page_key] = max(0, min(3, intval(trim(filter_input(INPUT_POST, 'theme_' . $page_key)))));
+        }
         $r->data->custom_css = trim(filter_input(INPUT_POST, 'custom_css'));
 
         if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_theme')), 'front_end_user_theme')) {

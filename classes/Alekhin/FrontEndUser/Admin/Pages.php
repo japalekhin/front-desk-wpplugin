@@ -15,7 +15,7 @@ class Pages {
     static function get_wordpress_pages() {
         $attr = new \stdClass();
         $attr->posts_per_page = -1;
-        $attr->order_by = 'title';
+        $attr->orderby = 'title';
         $attr->order = 'ASC';
         $attr->post_type = 'page';
         return get_posts((array) $attr);
@@ -28,6 +28,7 @@ class Pages {
         $pages['register'] = 'Register';
         $pages['recover'] = 'Password Recovery';
         $pages['reset'] = 'Reset Password';
+        $pages['profile'] = 'Profile';
 
         return $pages;
     }
@@ -35,10 +36,9 @@ class Pages {
     static function save_pages() {
         $r = new ReturnObject();
         $r->data->pages = [];
-        $r->data->pages['login'] = intval(trim(filter_input(INPUT_POST, 'page_login')));
-        $r->data->pages['register'] = intval(trim(filter_input(INPUT_POST, 'page_register')));
-        $r->data->pages['recover'] = intval(trim(filter_input(INPUT_POST, 'page_recover')));
-        $r->data->pages['reset'] = intval(trim(filter_input(INPUT_POST, 'page_reset')));
+        foreach (self::get_system_pages() as $page_key => $page_title) {
+            $r->data->pages[$page_key] = intval(trim(filter_input(INPUT_POST, 'page_' . $page_key)));
+        }
 
         if (!wp_verify_nonce(trim(filter_input(INPUT_POST, 'front_end_user_pages')), 'front_end_user_pages')) {
             $r->message = 'Invalid request session!';

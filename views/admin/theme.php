@@ -33,7 +33,7 @@ $system_pages = Pages::get_system_pages();
                 <tr>
                     <th scope="row">Custom CSS</th>
                     <td>
-                        <textarea id="txt_custom_css" name="custom_css" class="widefat" rows="10"><?php echo Theme::get_custom_css(); ?></textarea>
+                        <textarea id="txt_custom_css" name="custom_css" class="widefat" rows="10" placeholder="/* insert custom CSS code here */"><?php echo Theme::get_custom_css(); ?></textarea>
                     </td>
                 </tr>
             </tbody>

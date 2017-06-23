@@ -1,83 +1,5 @@
 [
     {
-        "name": "alekhin/website-helpers",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/japalekhin/website-helpers.git",
-            "reference": "6b08b6eefc829acd3319fbccdac0133341807895"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/japalekhin/website-helpers/zipball/6b08b6eefc829acd3319fbccdac0133341807895",
-            "reference": "6b08b6eefc829acd3319fbccdac0133341807895",
-            "shasum": ""
-        },
-        "time": "2017-06-19T00:49:05+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Alekhin\\WebsiteHelpers\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Japa Alekhin Llemos",
-                "email": "alekhin@llemos.com"
-            }
-        ],
-        "description": "Classes that make PHP programming a website easier.",
-        "keywords": [
-            "website",
-            "website helpers"
-        ]
-    },
-    {
-        "name": "alekhin/wordpress-helpers",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/japalekhin/wordpress-helpers.git",
-            "reference": "0af4584a2619696f73ed3c36a12c140b7f191c09"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/japalekhin/wordpress-helpers/zipball/0af4584a2619696f73ed3c36a12c140b7f191c09",
-            "reference": "0af4584a2619696f73ed3c36a12c140b7f191c09",
-            "shasum": ""
-        },
-        "time": "2017-06-19T06:11:34+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Alekhin\\WordPressHelpers\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Japa Alekhin Llemos",
-                "email": "alekhin@llemos.com"
-            }
-        ],
-        "description": "Classes that make programming a WordPress website easier.",
-        "keywords": [
-            "wordpress",
-            "wordpress helpers"
-        ]
-    },
-    {
         "name": "symfony/class-loader",
         "version": "v3.3.2",
         "version_normalized": "3.3.2.0",
@@ -134,5 +56,83 @@
         ],
         "description": "Symfony ClassLoader Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "alekhin/website-helpers",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/japalekhin/website-helpers.git",
+            "reference": "99521465fb2858dac3e60596b5bafbd1bf06e1d6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/japalekhin/website-helpers/zipball/99521465fb2858dac3e60596b5bafbd1bf06e1d6",
+            "reference": "99521465fb2858dac3e60596b5bafbd1bf06e1d6",
+            "shasum": ""
+        },
+        "time": "2017-06-23T05:07:28+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Alekhin\\WebsiteHelpers\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Japa Alekhin Llemos",
+                "email": "alekhin@llemos.com"
+            }
+        ],
+        "description": "Classes that make PHP programming a website easier.",
+        "keywords": [
+            "website",
+            "website helpers"
+        ]
+    },
+    {
+        "name": "alekhin/wordpress-helpers",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/japalekhin/wordpress-helpers.git",
+            "reference": "c12b171479e3c976dff1a1687d8cf55a6b850c12"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/japalekhin/wordpress-helpers/zipball/c12b171479e3c976dff1a1687d8cf55a6b850c12",
+            "reference": "c12b171479e3c976dff1a1687d8cf55a6b850c12",
+            "shasum": ""
+        },
+        "time": "2017-06-23T05:08:24+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Alekhin\\WordPressHelpers\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Japa Alekhin Llemos",
+                "email": "alekhin@llemos.com"
+            }
+        ],
+        "description": "Classes that make programming a WordPress website easier.",
+        "keywords": [
+            "wordpress",
+            "wordpress helpers"
+        ]
     }
 ]
