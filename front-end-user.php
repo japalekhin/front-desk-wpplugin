@@ -58,6 +58,7 @@ Register::initialize();
 Reset::initialize();
 Recover::initialize();
 //TwoStep::initialize();
+Theme::initialize();
 
 $loader = new \Alekhin\WebsiteHelpers\ReturnObject();
 

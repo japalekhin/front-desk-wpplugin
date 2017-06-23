@@ -15,11 +15,13 @@
     background-color: #ddd;
 }
 #page_admin_theme tr.theme-row label:before {
+    background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
     display: block;
+    margin-bottom: 10px;
     padding-top: 100%;
 }
 #page_admin_theme tr.theme-row label.theme-0:before {
@@ -34,7 +36,6 @@
 #page_admin_theme tr.theme-row label.theme-3:before {
     background-image: url('../images/style-3.svg');
 }
-
 #page_admin_theme #txt_custom_css {
     font-family: 'Courier New', monospace;
 }

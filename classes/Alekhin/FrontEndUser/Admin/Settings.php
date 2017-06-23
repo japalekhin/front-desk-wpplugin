@@ -75,8 +75,12 @@ class Settings {
     }
 
     static function on_admin_init() {
-        // redirect to home if /wp-admin is accessed
-        if (self::restrict_wp_admin() && !current_user_can('manage_options')) {
+        // redirect to home if:
+        // - /wp-admin is accessed
+        // - option to restrict wp_admin is enabled
+        // - user is not an admin
+        // - this is not an ajax request
+        if (self::restrict_wp_admin() && !current_user_can('manage_options') && !(defined('DOING_AJAX') && DOING_AJAX)) {
             wp_redirect(home_url());
             exit;
         }

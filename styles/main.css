@@ -1,0 +1,109 @@
+.feu-theme-1 .feu-form-field,
+.feu-theme-2 .feu-form-field,
+.feu-theme-3 .feu-form-field {
+    display: table;
+    width: 100%;
+}
+.feu-theme-1 .feu-form-field .feu-form-control input[type=color],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=date],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=datetime-local],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=email],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=month],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=number],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=password],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=range],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=search],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=tel],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=text],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=time],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=url],
+.feu-theme-1 .feu-form-field .feu-form-control input[type=week],
+.feu-theme-1 .feu-form-field .feu-form-control select,
+.feu-theme-1 .feu-form-field .feu-form-control textarea,
+.feu-theme-2 .feu-form-field .feu-form-control input[type=color],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=date],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=datetime-local],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=email],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=month],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=number],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=password],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=range],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=search],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=tel],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=text],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=time],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=url],
+.feu-theme-2 .feu-form-field .feu-form-control input[type=week],
+.feu-theme-2 .feu-form-field .feu-form-control select,
+.feu-theme-2 .feu-form-field .feu-form-control textarea,
+.feu-theme-3 .feu-form-field .feu-form-control input[type=color],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=date],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=datetime-local],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=email],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=month],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=number],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=password],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=range],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=search],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=tel],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=text],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=time],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=url],
+.feu-theme-3 .feu-form-field .feu-form-control input[type=week],
+.feu-theme-3 .feu-form-field .feu-form-control select,
+.feu-theme-3 .feu-form-field .feu-form-control textarea {
+    box-sizing: border-box;
+    padding: .75em 1em;
+    width: 100%;
+}
+
+.feu-theme-1 .feu-form-field .feu-form-label {
+    box-sizing: border-box;
+    display: table-cell;
+    padding-right: 1em;
+    width: 38.1966011%;
+}
+.feu-theme-1 .feu-form-field .feu-form-control {
+    box-sizing: border-box;
+    display: table-cell;
+}
+.feu-theme-1 .feu-form-field .feu-form-control .feu-form-control-info {
+    display: block;
+    margin-top: .5em;
+}
+.feu-theme-1 .feu-form-submit {
+    box-sizing: border-box;
+    display: block;
+    padding-left: 38.1966011%;
+    width: 100%;
+}
+.feu-theme-2 .feu-form-field .feu-form-label {
+    display: block;
+}
+.feu-theme-2 .feu-form-field .feu-form-control {
+    display: block;
+}
+.feu-theme-2 .feu-form-field .feu-form-control .feu-form-control-info {
+    display: block;
+    margin-top: .5em;
+}
+.feu-theme-2 .feu-form-submit {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+.feu-theme-3 .feu-form-field .feu-form-label {
+    display: none;
+}
+.feu-theme-3 .feu-form-field .feu-form-control {
+    display: block;
+}
+.feu-theme-3 .feu-form-field .feu-form-control .feu-form-control-info {
+    display: block;
+    margin-top: .5em;
+}
+.feu-theme-3 .feu-form-submit {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
