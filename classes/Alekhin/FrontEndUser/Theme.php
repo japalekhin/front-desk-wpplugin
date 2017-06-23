@@ -12,7 +12,7 @@ class Theme {
     }
 
     static function on_wp_enqueue_scripts() {
-        wp_enqueue_style('feu-theme', self::get_theme_url(), [], AdTheme::get_style_version());
+        wp_enqueue_style('feu-theme', self::get_theme_url(), [], FrontEndUser::get_ss_version() . '-' . AdTheme::get_style_version());
     }
 
     static function ajax_theme_stylesheet() {
