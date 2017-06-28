@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8555b8b15a0b512cfb1214adf463b3e4",
+    "content-hash": "cf6e412ce893737451f9c84ebc4f6a07",
     "packages": [
         {
             "name": "alekhin/website-helpers",
