@@ -1,5 +1,5 @@
 === Front Desk ===
-Contributors: japaalekhinllemos
+Contributors: japalekhin
 Donate link: https://alekhin.llemos.com/support
 Tags: front-end, front desk, login, sign-in, register, registration sign-up, password recovery, reset password, password reset
 Requires at least: 4.6
