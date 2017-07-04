@@ -52,5 +52,8 @@ If you have any questions just go to the [plugin site](https://alekhin.llemos.co
 
 == Changelog ==
 
+= 1.0.1 =
+* forms no longer override the content; they are now displayed after the content
+
 = 1.0.0 =
 * Initial release, no changes.

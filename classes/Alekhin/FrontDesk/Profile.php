@@ -132,7 +132,7 @@ class Profile {
 
         ob_start();
         include dir . '/views/profile.php';
-        return ob_get_clean();
+        return $the_content . ob_get_clean();
     }
 
     static function initialize() {

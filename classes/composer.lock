@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf6e412ce893737451f9c84ebc4f6a07",
+    "content-hash": "c6296609f04fc7d235dc03f0425b54f4",
     "packages": [
         {
             "name": "alekhin/website-helpers",
@@ -82,7 +82,7 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v3.3.2",
+            "version": "v3.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/class-loader.git",

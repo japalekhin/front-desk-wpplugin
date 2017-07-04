@@ -4,7 +4,7 @@
   Plugin Name: Front Desk
   Plugin URI:  https://alekhin.llemos.com/front-desk
   Description: A WP plugin that enables front-end functionality including login, register, password recovery and profile editor.
-  Version:     1.0.0
+  Version:     1.0.1
   Author:      Alekhin
   Author URI:  https://alekhin.llemos.com
   License:     GPLv3
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define(__NAMESPACE__ . '\version', '1.0.0' . (WP_DEBUG ? '.' . time() : ''));
+define(__NAMESPACE__ . '\version', '1.0.1' . (WP_DEBUG ? '.' . time() : ''));
 define(__NAMESPACE__ . '\dir', plugin_dir_path(__FILE__));
 define(__NAMESPACE__ . '\url', plugin_dir_url(__FILE__));
 

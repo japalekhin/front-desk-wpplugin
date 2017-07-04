@@ -102,7 +102,7 @@ class Recover {
 
         ob_start();
         include dir . '/views/recover.php';
-        return ob_get_clean();
+        return $the_content . ob_get_clean();
     }
 
     static function initialize() {

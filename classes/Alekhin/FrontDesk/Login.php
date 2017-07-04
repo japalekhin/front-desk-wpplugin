@@ -94,7 +94,7 @@ class Login {
 
         ob_start();
         include dir . '/views/login.php';
-        return ob_get_clean();
+        return $the_content . ob_get_clean();
     }
 
     static function initialize() {
